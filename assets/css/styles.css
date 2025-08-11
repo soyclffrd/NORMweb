@@ -77,11 +77,11 @@
 
     /* About */
     .about { background: var(--bg-soft); }
-    .about-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center; }
+    .about-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 48px; align-items: center; }
     .about h3 { font-size: 1.5rem; margin: 14px 0 8px; }
     .about p { color: #555; margin-bottom: 10px; }
     .about-figure { text-align: center; }
-    .about-figure img { width: 100%; max-width: 420px; border-radius: 18px; box-shadow: var(--shadow); }
+    .about-figure img { width: 100%; max-width: 100%; height: auto; display: block; border-radius: 18px; box-shadow: var(--shadow); }
 
     /* Owner / Founder */
     .owner { background: var(--bg); }
@@ -217,10 +217,23 @@
       /* Disable hover effects on touch/small screens */
       nav a:hover { background: transparent !important; transform: none !important; box-shadow: none !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; }
       nav a::after { display: none !important; }
+
+      /* Layout and spacing tweaks for small screens */
+      .container { padding: 0 16px; }
+      section { padding: 64px 0; }
+      .hero { padding-top: 120px; padding-bottom: 64px; }
+      .header-inner { padding: 12px 16px; }
+      .about-grid { gap: 20px; }
+      .about-figure { margin: 0 !important; padding: 0 !important; align-self: center !important; }
+      .about-figure img { width: 100% !important; max-width: 100% !important; height: auto !important; }
+      .services-grid, .features, .reviews-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; gap: 20px; }
     }
     @media (max-width: 520px) {
       .section-header h2 { font-size: 1.8rem; }
-      .hero { padding-top: 120px; }
+      .hero { padding-top: 110px; padding-bottom: 56px; }
+      nav ul { gap: 8px; }
+      nav a { padding: 8px 10px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
