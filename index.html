@@ -232,7 +232,7 @@
         <p>Partner with NORM to optimize your operations and grow without limits.</p>
       </div>
       <div class="contact-grid">
-        <form class="form" onsubmit="event.preventDefault(); alert('Thank you for your inquiry! We will get back to you soon.');">
+        <form id="contactForm" class="form">
           <div class="row">
             <label for="name">Name *</label>
             <input id="name" name="name" type="text" required />
@@ -271,6 +271,21 @@
       </div>
     </div>
   </section>
+
+  <!-- Sweet Alert Style Modal -->
+  <div id="swalOverlay" class="swal-overlay" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="swal-modal" role="document">
+      <div class="swal-icon">
+        <svg viewBox="0 0 24 24" width="52" height="52" aria-hidden="true">
+          <circle cx="12" cy="12" r="11" fill="none" stroke="currentColor" stroke-width="2"></circle>
+          <path d="M7 12.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </div>
+      <h3 class="swal-title">Message Sent!</h3>
+      <p class="swal-text">Thank you for your inquiry! We will get back to you soon.</p>
+      <button id="swalCloseBtn" class="btn swal-btn" type="button">Okay</button>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer>

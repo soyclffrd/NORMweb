@@ -95,6 +95,37 @@ function initCarousel() {
 }
 document.addEventListener('DOMContentLoaded', initCarousel);
 
+// Sweet alert-like modal for the contact form
+const contactForm = document.getElementById('contactForm');
+const swalOverlay = document.getElementById('swalOverlay');
+const swalCloseBtn = document.getElementById('swalCloseBtn');
+
+function openSwal() {
+  if (!swalOverlay) return;
+  swalOverlay.classList.add('show');
+  swalOverlay.setAttribute('aria-hidden', 'false');
+}
+function closeSwal() {
+  if (!swalOverlay) return;
+  swalOverlay.classList.remove('show');
+  swalOverlay.setAttribute('aria-hidden', 'true');
+}
+if (contactForm) {
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    openSwal();
+    contactForm.reset();
+  });
+}
+if (swalOverlay) {
+  swalOverlay.addEventListener('click', (e) => {
+    if (e.target === swalOverlay) closeSwal();
+  });
+}
+if (swalCloseBtn) {
+  swalCloseBtn.addEventListener('click', closeSwal);
+}
+
 
 // Mobile nav toggle
 const navToggle = document.querySelector('.nav-toggle');

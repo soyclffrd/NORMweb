@@ -183,6 +183,16 @@
     .social a { text-decoration: none; margin-right: 10px; font-size: 1.3rem; color: #fff; transition: transform .2s ease, color .2s ease; }
     .social a:hover { transform: translateY(-2px); color: var(--accent); }
 
+    /* Sweet Alert style modal */
+    .swal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.35); display: grid; place-items: center; opacity: 0; pointer-events: none; transition: opacity .28s var(--ease-smooth); z-index: 2000; }
+    .swal-overlay.show { opacity: 1; pointer-events: auto; }
+    .swal-modal { background: #fff; border-radius: 16px; padding: 24px; width: min(92vw, 440px); text-align: center; box-shadow: 0 40px 80px rgba(0,0,0,0.18); transform: translateY(16px) scale(.98); transition: transform .28s var(--ease-smooth), opacity .28s var(--ease-smooth); opacity: 0; color: var(--text); }
+    .swal-overlay.show .swal-modal { transform: translateY(0) scale(1); opacity: 1; }
+    .swal-icon { color: var(--primary-2); margin-bottom: 10px; display: grid; place-items: center; }
+    .swal-title { margin: 8px 0 4px; font-size: 1.25rem; }
+    .swal-text { color: #556; margin-bottom: 14px; }
+    .swal-btn { width: auto; padding: 10px 18px; }
+
     /* Footer */
     footer { background: #22313f; color: #fff; text-align: center; padding: 28px 0; }
 
